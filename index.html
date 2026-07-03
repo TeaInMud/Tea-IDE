@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>🍵 Tea IDE</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body>
+
+<header class="header">
+    <span class="brand">🍵 Tea IDE</span>
+    <span class="filename" id="filename">untitled.tea</span>
+    <nav class="header-btns">
+        <button onclick="FileManager.open()">📂 Open</button>
+        <button onclick="FileManager.save()">💾 Save</button>
+        <button class="btn-primary" onclick="App.run()">▶ Run</button>
+    </nav>
+</header>
+
+<nav class="toolbar" id="toolbar"></nav>
+
+<main class="main-area">
+    <section class="editor-wrap">
+        <div class="line-nums" id="lineNums">1</div>
+        <textarea id="editor" placeholder="< Write Tea code here... >" 
+                  spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
+    </section>
+    
+    <section class="output-panel">
+        <div class="output-header">
+            <span>📤 Output</span>
+            <button onclick="UI.clearOutput()">Clear</button>
+        </div>
+        <div id="output"></div>
+    </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/ui.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/fileManager.js"></script>
+<script src="js/transpiler.js"></script>
+<script src="js/simulator.js"></script>
+<script src="js/editor.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
